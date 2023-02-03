@@ -9,9 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm i && npm run export && cd ./out
+      - run: npm i && npm run export
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
+          entryPoint: ./out
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_BYTE_CEPS }}"
           projectId: byte-ceps
