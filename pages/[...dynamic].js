@@ -7,7 +7,7 @@ export default function () {
   return (
     <div>
       <main className={styles.main}>
-        <h1> {dynamic} </h1>
+        <h1> {dynamic?.join("/")} </h1>
       </main>
     </div>
   );
